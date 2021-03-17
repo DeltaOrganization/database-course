@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li><li class="chapter-item expanded "><a href="nocoes-de-relacionamento/index.html"><strong aria-hidden="true">4.</strong> 🔗 Relacionamento</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nocoes-de-relacionamento/relacionamento-tabelas.html"><strong aria-hidden="true">4.1.</strong> 📝 Relacionamento entre Tabelas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -302,6 +302,41 @@
 </ul>
 <p>Dentre os tipos de atributos podemos ter: <strong>atributos simples/atômico</strong> (não podem ser divididos), ou <strong>atributos compostos</strong> (que podem sim ser divididos) como por exemplo: endereço que pode ser dividido em rua, número, bairro, CEP...</p>
 <p>Podem ser caracterizados como: <strong>monovalorados</strong>, que definem um único valor(data de nascimento por exemplo) ou <strong>multivalorados</strong>,  que definem um conjunto de valores(telefones).</p>
+<h1 id="-relacionamento"><a class="header" href="#-relacionamento">🔗 Relacionamento</a></h1>
+<hr />
+<p>Se trata de uma associação entre <em>entidades</em>, para que, por exemplo, uma escola associar um aluno ao seu curso, um cliente a um pedido...</p>
+<p>Os relacionamentos são representados por losangos no DER:</p>
+<p><img src="nocoes-de-relacionamento/../images/relacionamento-symbol.png" alt="relacionamento" /></p>
+<h2 id="grau-de-relacionamento"><a class="header" href="#grau-de-relacionamento">Grau de Relacionamento</a></h2>
+<hr />
+<p>Um relacionamento podem ter diversos participantes, por isso podem receber o nome de unário, binário(mais comum), ternário.</p>
+<blockquote>
+<p>O relacionamento unário/recursivo/auto-relacionamento pode acontecer quando uma entidade de um banco de dados se relaciona com outra entidade do mesmo banco.</p>
+</blockquote>
+<h1 id="-relacionamento-entre-tabelas"><a class="header" href="#-relacionamento-entre-tabelas">📝 Relacionamento entre Tabelas</a></h1>
+<hr />
+<p>Relacionar tabelas é quando um atributo liga uma tabela a outra por meio de uma <em>chave estrangeira</em>.</p>
+<p>Cada linha de dados em uma tabela deve ser identificada usando a chave primária.</p>
+<p>Portanto relacionamos a chave estrangeira de uma tabela com a chave primária de outra tabela para efetuar o relacionamento.</p>
+<p><img src="nocoes-de-relacionamento/../images/chave-estrangeira.PNG" alt="chave-estrangeira" /></p>
+<h2 id="cardinalidade"><a class="header" href="#cardinalidade">Cardinalidade</a></h2>
+<hr />
+<p>É o número máximo e mínimo de ocorrências de uma entidade que está associada a outra entidade que faz parte do relacionamento, ajudando a definir o número de ocorrências de relacionamento.</p>
+<ul>
+<li><strong>Cardinalidade Máxima:</strong> número máximo de ocorrências(N) de um relacionamento. Classificando os relacionamentos de 1:1, 1:n, n:n.
+<ul>
+<li>No relacionamento 1:1 cada registro de uma tabela X pode ter apenas um registro na tabela Y e vice-versa. É muito incomum.</li>
+<li>No relacionamento 1:n cada registro de uma tabela X tem um registro em uma tabela Y, porém um registro na tabela Y pode ter diversos na tabela X.</li>
+<li>No relacionamento n:n um registro na tabela X pode ter vários registros na tabela Y e vice-versa.</li>
+</ul>
+</li>
+<li><strong>Cardinalidade Mínima</strong>: expressa o número mínimo de ocorrências de outra entidade. 
+<ul>
+<li>Cardinalidade Mínima 1(associação obrigatória): deve existir um relaionamento que uma ocorrência se relacione no mínimo uma vez. Notação: (1,x)</li>
+<li>Cardinalidade Mínima 0(associação opcional): não é necessário que uma ocorrência se relacione. Notação: (0,x)</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 

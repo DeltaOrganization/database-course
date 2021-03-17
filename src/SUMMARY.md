@@ -7,3 +7,5 @@
 - [🧍 Entidades](./entidades/README.md)
     - [🏗️ Modelo Entidade-Relacionamento(MER)](./entidades/mer-model.md)
     - [👻 Atributos das Entidades](./entidades/entities-attributes.md)
+- [🔗 Relacionamento](./nocoes-de-relacionamento/README.md)
+    - [📝 Relacionamento entre Tabelas](./nocoes-de-relacionamento/relacionamento-tabelas.md)

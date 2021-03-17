@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>👥 Modelagem de Dados</title>
+        <title>🔗 Relacionamento</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/modelagem-dados.html" class="active"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="../entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="../entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="../entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="../entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li><li class="chapter-item expanded "><a href="../nocoes-de-relacionamento/index.html" class="active"><strong aria-hidden="true">4.</strong> 🔗 Relacionamento</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nocoes-de-relacionamento/relacionamento-tabelas.html"><strong aria-hidden="true">4.1.</strong> 📝 Relacionamento entre Tabelas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,74 +163,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="-modelagem-de-dados"><a class="header" href="#-modelagem-de-dados">👥 Modelagem de Dados</a></h1>
+                        <h1 id="-relacionamento"><a class="header" href="#-relacionamento">🔗 Relacionamento</a></h1>
 <hr />
-<p>Existem diversos modelos de dados como: hierárquico, rede, relacional, orientado a objeto e não relacional, porém o que será abordado durante o curso é o relacional.</p>
-<h2 id="modelagem-de-dados"><a class="header" href="#modelagem-de-dados">Modelagem de Dados</a></h2>
-<p>Um modelo de dados é importante pra a criação de um sistema de informação com a aplicação de técnicas específicas de modelagem(nem sempre o projetista do banco de dados é o programador). O modelo de dados segue regras de negócio a fim de fornecer uma estrutura para os dados serem usados em um sistema de informação, aplicando definições e formatos específicos.</p>
-<h2 id="níveis-de-modelagem-de-dados"><a class="header" href="#níveis-de-modelagem-de-dados">Níveis de Modelagem de Dados</a></h2>
-<ul>
-<li>Modelo conceitual: ideia abstrata, geral...
-<ul>
-<li>Primeira fase de modelagem, sem pensar em SGBD, linguagem...</li>
-<li>Visão simplificada dos dados e relacionamentos</li>
-</ul>
-</li>
-<li>Modelo lógico: detalhamento intermediário
-<ul>
-<li>Contém especificação detalhada</li>
-<li>Tipos de dados definidos</li>
-</ul>
-</li>
-<li>Modelo físico: alto nível de detalhamento final, amplo...
-<ul>
-<li>Contém até mesmo restrições na tabela, nos seus campos, valores...</li>
-<li>Após a criação deste modelo é implementado o SGBD mais adequado</li>
-</ul>
-</li>
-</ul>
-<h2 id="modelo-relacional"><a class="header" href="#modelo-relacional">Modelo Relacional</a></h2>
-<p>Neste modelo os dados são organizados em tabela(relações) bidimensionais, linhas e colunas. O modelo relacional é baseado em lógica e teoria dos conjuntos. Neste modelo um banco de dados é uma coleção de relações(tabelas bidimensionais) onde os dados são armazenados, por exemplo em um sistema acadêmico, para armazenar dados sobre os alunos são criadas tabelas para conter os dados dos alunos como: dados pessoais, disciplinas cursadas, notas...</p>
-<h2 id="componentes-do-modelo-relacional"><a class="header" href="#componentes-do-modelo-relacional">Componentes do Modelo Relacional</a></h2>
-<p>Dentre os componentes do modelo relacional serão abordados:</p>
-<ul>
-<li>Coleções de objetos que armazenam dados(relações - tabelas);</li>
-<li>Conjuntos de operadores que agem nas relações, produzindo outras relações;</li>
-<li>Conjuntos de regras que garantem a integridade de dados, precisão e consistência.</li>
-</ul>
-<p>No modelo relacional existem <strong>Tabelas</strong>, que são a estrutura básica de armazenamento no SGBDR, armazenando dados necessários sobre o mundo real.</p>
-<p>Também existem as <strong>Tuplas</strong>, que são linhas(registros), representando os dados de uma determinada ocorrência em particular, por exemplo, em uma tupla do banco de dados de uma escola existe os dados de um aluno. Cada linha deve conter uma informação única de modo que não seja duplicada.</p>
-<p>Existem também <strong>Colunas</strong> que armazenam um tipo específico de dado(valor), por exemplo, a coluna que armazena nome do usuário em um banco de dados.</p>
-<p>O <strong>Relacionamento</strong> é uma conexão existente entre tabelas conectadas por atributos(chave primária e estrangeira). Por exemplo: numa universidade existem banco de dados para alunos e para os dados de um curso, é possível relacionar o banco de dados dos alunos selecionando os que fazem certo curso com o banco de dados que contém os cursos.</p>
-<h2 id="etapas-de-desenvolvimento-do-banco-de-dados"><a class="header" href="#etapas-de-desenvolvimento-do-banco-de-dados">Etapas de Desenvolvimento do Banco de Dados</a></h2>
-<ul>
-<li>Especificação e análise de requisitos
-<ul>
-<li>Documentação de requisitos</li>
-</ul>
-</li>
-<li>Projeto conceitual(processo inicial)</li>
-<li>Projeto Lógico: expresso num modelo relacional</li>
-<li>Projeto Físico: 
-<ul>
-<li>Contém especificações para armazenar e acessar o banco de dados</li>
-<li>Implementação, inserção e manutenção dos dados.</li>
-</ul>
-</li>
-</ul>
+<p>Se trata de uma associação entre <em>entidades</em>, para que, por exemplo, uma escola associar um aluno ao seu curso, um cliente a um pedido...</p>
+<p>Os relacionamentos são representados por losangos no DER:</p>
+<p><img src="../images/relacionamento-symbol.png" alt="relacionamento" /></p>
+<h2 id="grau-de-relacionamento"><a class="header" href="#grau-de-relacionamento">Grau de Relacionamento</a></h2>
+<hr />
+<p>Um relacionamento podem ter diversos participantes, por isso podem receber o nome de unário, binário(mais comum), ternário.</p>
+<blockquote>
+<p>O relacionamento unário/recursivo/auto-relacionamento pode acontecer quando uma entidade de um banco de dados se relaciona com outra entidade do mesmo banco.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../banco-de-dados/gestao-db.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../entidades/entities-attributes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../entidades/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../nocoes-de-relacionamento/relacionamento-tabelas.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -242,13 +198,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../banco-de-dados/gestao-db.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../entidades/entities-attributes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../entidades/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../nocoes-de-relacionamento/relacionamento-tabelas.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>🔐 Introdução ao Banco de Dados</title>
+        <title>🏗️ Modelo Entidade-Relacionamento(MER)</title>
         
         
 
@@ -18,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -49,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="../banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="../entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../entidades/mer-model.html" class="active"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="../entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li><li class="chapter-item expanded "><a href="../nocoes-de-relacionamento/index.html"><strong aria-hidden="true">4.</strong> 🔗 Relacionamento</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../nocoes-de-relacionamento/relacionamento-tabelas.html"><strong aria-hidden="true">4.1.</strong> 📝 Relacionamento entre Tabelas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -163,25 +163,47 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="-introdução-ao-banco-de-dados"><a class="header" href="#-introdução-ao-banco-de-dados">🔐 Introdução ao Banco de Dados</a></h1>
+                        <h1 id="-modelo-entidade-relacionamentomer"><a class="header" href="#-modelo-entidade-relacionamentomer">🏗️ Modelo Entidade-Relacionamento(MER)</a></h1>
 <hr />
-<p>No mundo digital as informações que usamos a todo momento estão armazenadas em um banco de dados. Seu objetivo é armazenar dados e, por meio de uma consulta, gerar informações úteis em certo contexto, além de reter dados de forma a serem utilizados em outros momentos.</p>
-<h2 id="a-cronologia-do-uso-do-banco-de-dados"><a class="header" href="#a-cronologia-do-uso-do-banco-de-dados">A Cronologia do Uso do Banco de Dados</a></h2>
-<p>Nos anos 50 os dados eram guardados em pastas e armazenados em papéis que ficavam em arquivos. Já no campo da tecnologia da informação os papéis poderiam ser considerados registros, o conjunto de todas as pastas é chamado de tabela e o amontoado de papéis, na área de TI, é chamado de arquivo. Ainda na década de 50 os computadores começaram a serem usados por meio dos arquivos sequenciais, fitas magnéticas ou cartões perfurados. Apenas com o uso de índices foi possível o acesso direto(pular arquivos na consulta) sem o uso do acesso sequencial.</p>
-<p>Com o uso de arquivos digitais eram usados softwares muito simples que permitiam cadastro, busca, exclusão, melhorando a consulta às informações(criando uma versão melhorada dos arquivos físicos). Porém ainda eram dados isolados, fazendo com que cadastros de produtos não consigam saber o seu pertencimento aos seus fornecedores, isto é, o banco de dados dos fornecedores não possibilitava saber quais produtos eram oferecidos pois eles estavam isolados em bancos diferentes. </p>
-<blockquote>
-<p>Na década de 60 ocorre o CODASIL, um evento onde surgiu o COBOL, a primeira linguagem preocupada com a estrutura de dados e o primeiro banco de dados parecido com o que é usado hoje(diferente de arquivos isolados).</p>
-</blockquote>
-<p>Na década de 70 surgiu o modelo de banco de dados correlacionado, o SQL, uma linguagem de exploração usada para manter banco de dados.</p>
+<p>É um modelo de dados conceitual de alto nível, ou seja, seus conceitos foram projetados para serem compreensíveis aos usuários descartando métodos de armazenamento de dados, etc.</p>
+<p>Pode ser expresso graficamente por meio do Diagrama Entidade Relacionamento(DER). Cada elemento do MER pode ser representado usando o DER.</p>
+<div style="text-align:center">
+<img src="../images/der-image.png" alt="der-image">
+</div>
+<p>A partir do MER podemos criar um DER de acordo com as especificações definidas nas análises de requisitos, permitindo ilustrar as entidades e relacionamentos entre elas. O MER ajuda a separar as informações do negócio das atividades realizadas no mesmo.</p>
+<h2 id="componentes-do-mer"><a class="header" href="#componentes-do-mer">Componentes do MER</a></h2>
+<p>A <strong>Entidade</strong> (tabela, registros,...) é algo significativo sobre o qual devemos possuir informações como por exemplo a tabela de clientes, já o <strong>Atributo</strong> descreve uma entidade e o <strong>Relacionamento</strong> é uma associação entre as Entidades.</p>
+<h2 id="a-entidade"><a class="header" href="#a-entidade">A Entidade</a></h2>
+<ul>
+<li>Uma entidade é algo com importância para um usuário ou organização que precisa ser representado no banco de dados. </li>
+<li>Uma entidade pode ter existência física ou abstrata. </li>
+<li>As entidades modeladas no MER serão tabelas dos bancos de dados. </li>
+<li>Cada objeto de uma entidade é chamado de instância de entidade. </li>
+<li>Cada instância/ocorrência de entidade será uma linha da tabela ou registro ou ainda tupla.</li>
+</ul>
+<p>A representação da entidade no diagrama deve ser representada por um RETÂNGULO. Para identificar uma identidade fazemos a pergunta: &quot;a respeito de quem eu quero guardar informações ?&quot;</p>
+<h2 id="regras-para-nomeação-de-entidades"><a class="header" href="#regras-para-nomeação-de-entidades">Regras para Nomeação de Entidades</a></h2>
+<p>Existem regras para a nomeação de entidades como:</p>
+<ul>
+<li>Começam com letra;</li>
+<li>Usam palavras no singular;</li>
+<li>Não têm espaço;</li>
+<li>Evitam caracteres especiais;</li>
+<li>Devem ser únicos no banco de dados. </li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="../entidades/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="banco-de-dados/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../entidades/entities-attributes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -193,9 +215,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="../entidades/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="banco-de-dados/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../entidades/entities-attributes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -218,14 +244,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
